@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --secondary: #003B4A;
+  --primary: #B8DED5;
+  --success: #8EA66A;
+  --warning: #D9B95B;
+  --danger: #BF5349;
+  --highlight: #F2F2F2;
+  --shadow: #464646;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--secondary);
+  background: var(--primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* global.css */
+input:focus, button:focus, a:focus {
+  outline: none;
+}
