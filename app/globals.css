@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--secondary);
+    --foreground: var(--primary);
   }
 }
 
@@ -32,6 +32,6 @@ body {
 }
 
 /* global.css */
-input:focus, button:focus, a:focus {
+input:focus, button:focus, a:focus, input:active {
   outline: none;
 }

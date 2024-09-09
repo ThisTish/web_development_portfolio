@@ -70,7 +70,7 @@ const DreamDrop = () => {
 		<div >
 			<form onSubmit={handleSubmit} className="dropzone gap-5 flex flex-col justify-center my-10">
 				{/* to start */}
-				{picStatus === 'ready' && (
+				{picStatus === `ready` && (
 					<div {...getRootProps()} className="size-48 bg-success border-4 border-highlight rounded-2xl shadow-lg shadow-shadow">
 						<input {...getInputProps()} />
 						<div className="flex flex-col items-center p-5 gap-4 font-semibold text-highlight tracking-widest leading-loose text-center">
@@ -80,9 +80,9 @@ const DreamDrop = () => {
 					</div>
 				)}
 				{/* to preview */}
-				{picStatus === 'preview' && (
+				{picStatus === `preview` && (
 					<>
-						<div className="w-48 h-auto mx-auto border-4 border-primary rounded-2xl shadow-lg shadow-success">
+						<div className=" w-48 h-auto mx-auto border-4 border-primary rounded-2xl shadow-lg shadow-success">
 							<img src={preview as string} className="rounded-2xl shadow-lg p-0.5" />
 						{message && (
 							<div className='flex flex-col text-center'>
@@ -109,12 +109,13 @@ const DreamDrop = () => {
 			</form>
 
 				{/* saved! */}
-			{picStatus === 'saved' && (
+			{picStatus === `saved` && (
 				
 				<div className=" w-48 h-auto border-4 border-success rounded-2xl shadow-lg shadow-success">
 					{/* change image to updated image with title - play with presets/transformations(save title as?)*/}
+					{/* or tooltip! with popper! */}
 					<img src={preview as string} className="rounded-2xl p-0.5" />
-					<div className="flex flex-col items-center justify-center gap-4 font-semibold text-danger tracking-widest text-center">
+					<div className="flex flex-col items-center justify-center gap-4 font-semibold text-success tracking-widest text-center">
 						<span>{message}</span>
 						<MdCloudDone size={48} />
 					</div>
@@ -122,7 +123,7 @@ const DreamDrop = () => {
 
 			)}
 		</div>
-	);
+	)
 }
 
-export default DreamDrop;
+export default DreamDrop
